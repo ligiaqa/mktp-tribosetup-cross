@@ -32,12 +32,24 @@ Cypress.Commands.add('navigate', (route) => {
     cy.wait('@loadpage')
 })
 
+/*
 Cypress.Commands.add("login", (email, senha) => {
 
     cy.get('[data-test="profile-gitHub"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
+    cy.get('[data-test="profile-bio"] > .MuiInputBase-root').type(senha)
+    cy.get('[data-test="profile-submit"]').click()
     
-        cy.get('[data-test="profile-bio"] > .MuiInputBase-root').type(senha)
-    
-        cy.get('[data-test="profile-submit"]').click()
-    
-    })
+    });
+
+    */
+
+Cypress.Commands.add("login", (email,senha)=>{
+cy.visit('login')
+cy.get('[data-test="login-email"]').type(email)
+cy.get('[data-test="login-password"]').type(senha)
+cy.get('[data-test="login-submit"]').click()
+
+
+   }
+   
+   );
