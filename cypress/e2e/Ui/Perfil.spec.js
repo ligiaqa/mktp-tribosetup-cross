@@ -49,4 +49,11 @@ describe ('US0003 - Funcionalidade: Criar Perfil' , () => {
         cy.get('[data-test="profile-submit"]').click()
         cy.get('.MuiFormHelperText-root').should('contain', 'Digite uma url válida')
     });
+
+    // commands
+    it('Adicionar experiência - Adicionar formação - Commands', () => {
+        cy.experiencia()
+    });
+
 });
+
